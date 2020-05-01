@@ -5,21 +5,16 @@ function getRealNum(numA, numB) {
   return numB;
 }
 
-
 function questionSix(arr, num) {
   const numElements = arr.lenght;
   if (numElements === num || num % numElements === 0 || num === 0) {
     return arr;
   }
-  num = numElements - getRealNum(num)  
-//   let newArr = arr.slice(num)
+  num = numElements - getRealNum(num) - 1;
+  let newArr = arr.slice(num);
 
-//   for(let i = newArr.lenght; i < numElements; i++) {
-//       newArr.push(arr[i-num]);
-//   }
-  return arr.slice(num);
+  for (let i = newArr.lenght; i < numElements; i++) {
+    newArr[i] = arr[i - num];
+  }
+  return newArr;
 }
-
-
-0 1 2 3 4 = 5 , 2
-5 6 7 8 9
